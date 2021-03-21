@@ -8,6 +8,7 @@ const options = yargs(process.argv)
     .option('s', { alias: 'ignore-ssl', default: false, type: 'boolean' })
     .option('u', { alias: 'username', default: 'admin' })
     .option('p', { alias: 'password', default: 'motorola' })
+    .option('d', { alias: 'dry-run', default: false, type: 'boolean' })
     .argv;
 
 const client = new HnapClient(options.url, options.ignoreSsl);
@@ -18,4 +19,11 @@ const client = new HnapClient(options.url, options.ignoreSsl);
 
     const connectionInfoResult = await client.getConnectionInfo();
     console.log(connectionInfoResult);
+
+    if (options.dryRun) {
+        console.log('Dry run. Not rebooting device.');
+    } else {
+        const rebootResult = await client.reboot();
+        console.log(rebootResult);
+    }
 })();
