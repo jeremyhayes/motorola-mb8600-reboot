@@ -17,5 +17,4 @@ WORKDIR /app
 # copy runtime files
 COPY --from=builder /app/source ./
 
-ENTRYPOINT [ "node", "index.js" ]
-# cli args to be passed when running container
+ENTRYPOINT ./docker-entrypoint.sh
