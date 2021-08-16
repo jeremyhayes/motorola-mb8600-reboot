@@ -34,7 +34,7 @@ read_secret 'MODEM_USERNAME'
 read_secret 'MODEM_PASSWORD'
 
 node index.js \
-    --url ${MODEM_ADDRESS:?} \
+    --url ${MODEM_BASE_URL:?} \
     --username ${MODEM_USERNAME:?} \
     --password ${MODEM_PASSWORD:?} \
     ${MODEM_IGNORE_SSL:+--ignore-ssl} \
