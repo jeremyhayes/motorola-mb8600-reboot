@@ -12,6 +12,6 @@
   "type": "module",
   "dependencies": {
     "motorola-mb8600-client": "github:jeremyhayes/motorola-mb8600-client#db3bd61",
-    "yargs": "^17.6.2"
+    "yargs": "^17.7.0"
   }
 }
